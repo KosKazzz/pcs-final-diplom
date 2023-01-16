@@ -15,7 +15,7 @@ public class BooleanSearchEngine implements SearchEngine {
         if (pdfsDir.isDirectory()) {
             String[] fileNamesArr = pdfsDir.list();
             for (String s : fileNamesArr) {
-                File oneFile = new File(".\\" + pdfsDir + "\\" + s);
+                File oneFile = new File("./" + pdfsDir + "/" + s);
                 PdfDocument document = new PdfDocument(new PdfReader(oneFile));
                 for (int i = 1; i <= document.getNumberOfPages(); i++) {
                     String text = PdfTextExtractor.getTextFromPage(document.getPage(i));
